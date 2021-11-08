@@ -29,29 +29,6 @@ function nextPage(event) {
         .then(function (ticketData) {
             console.log(ticketData);
 
-            // // Creating variables for event elements
-            // // Image variable
-            // var eventImage = document.querySelector(".pure-img")
-            // var imgUrl = ticketData._embedded.events[0].images[0].url;
-
-            // // Event name variables
-            // var eventNameSpan = document.querySelector("#name");
-            // var eventName = ticketData._embedded.events[0].name;
-
-            // // Event Date variables
-            // var eventDateSpan = document.querySelector("#date");
-            // var eventDate = ticketData._embedded.events[0].dates.start.localDate;
-
-            //  //Event Location variables
-            //  var locationSpan = document.querySelector("#location");
-            //  var locationName = ticketData._embedded.events[0]._embedded.venues[0].name;
- 
-            //  // Rendering onto page
-            //  eventNameSpan.textContent = eventName;
-            //  eventImage.src = imgUrl;
-            //  eventDateSpan.textContent = eventDate;
-            //  locationSpan.textContent = locationName;
-
              //Events loop
              for (var i = 0; i < 5; i++) {
 
