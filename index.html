@@ -5,22 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventube</title>
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+        integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
 </head>
 
 <body>
-    <main>
-        <h1>Eventube</h1>
-        <section>
-            <h2>Got any plans?</h2>
-            <input typy='text' placeholder="please enter your city">
-            <button class='city-search'>Search</button>
-            <h3>Well, now you will.</h3>
+
+    <main class="pure-g">
+        <h1 class="pure-u-1">
+            Eventube
+        </h1>
+        <section class="search pure-u-1">
+            <h2>
+                Got any plans?
+            </h2>
+            <form class="pure-form">
+                <input class="pure-input" type='text' placeholder=" Please enter your city">
+                <button class='city-search'>Search</button>
+            </form>
+            <h3>
+                Well, now you will.
+            </h3>
         </section>
     </main>
-    <section class='search-result'>
+
+    <section class='search-result' hidden>
         <section class='block-holder'>
             <section class='event-block'>
 
@@ -37,6 +49,7 @@
 
         </section>
     </section>
+
 
 
     <script src='script.js'></script>
