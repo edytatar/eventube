@@ -54,6 +54,7 @@ function nextPage(event) {
 
                 //Setting attributes for elements so they have the correct style
                 eventContainer.setAttribute("class", "event");
+                eventContainer.setAttribute("name", eventNameData);
                 imgContainer.setAttribute("class", "img-container");
                 eventDetailContainer.setAttribute("class", "details");
                 img.setAttribute("alt", "Image of performer");
