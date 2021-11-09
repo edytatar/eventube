@@ -3,6 +3,10 @@ var mainPage = document.querySelector('.front-page')
 var secondPage = document.querySelector('.search-result')
 var button = document.querySelector('.city-search')
 var inputField = document.querySelector(".pure-input");
+var videoPlayerOne = document.querySelector('#frame-one')
+var videoPlayerTwo = document.querySelector('#frame-two')
+var videoPlayerThree = document.querySelector('#frame-three')
+var videoPlayerFour = document.querySelector('#frame-four')
 
 
 function nextPage(event) {
@@ -29,8 +33,8 @@ function nextPage(event) {
         .then(function (ticketData) {
             console.log(ticketData);
 
-             //Events loop
-             for (var i = 0; i < 5; i++) {
+            //Events loop
+            for (var i = 0; i < 5; i++) {
 
                 // Creating elements of event cards
                 var eventContainer = document.createElement("section");
@@ -59,6 +63,7 @@ function nextPage(event) {
                 eventDetailContainer.setAttribute("class", "details");
                 img.setAttribute("alt", "Image of performer");
                 img.setAttribute("src", imgData);
+                img.setAttribute("name", eventNameData);
                 eventName.setAttribute("class", "event-detail-component");
                 eventDate.setAttribute("class", "event-detail-component");
                 eventLocation.setAttribute("class", "event-detail-component");
@@ -66,7 +71,7 @@ function nextPage(event) {
                 // Creating variable for article with class="event-article"
                 var eventSection = document.querySelector(".event-article");
 
-               // Appending Elements
+                // Appending Elements
                 eventContainer.append(imgContainer);
                 imgContainer.append(img);
 
@@ -75,18 +80,51 @@ function nextPage(event) {
                 eventDetailContainer.append(eventDate);
                 eventDetailContainer.append(eventLocation);
 
-                 //Appending all above to .event-article
-                 eventSection.append(eventContainer);
-             }
-             })
+                //Appending all above to .event-article
+                eventSection.append(eventContainer);
+
+                eventContainer.addEventListener('click', function(event) {
+                        event.preventDefault()
+                        var artist = event.target.name
+
+                        var requestUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=' + artist + '&key=AIzaSyDrE9r5RLbGomSlaxVmS5fZdzrrmGDV9dM'
+    
+                        console.log(requestUrl)
+    
+                        fetch(requestUrl)
+                            .then((response) => {
+                                return response.json()
+                            })
+                            .then((data) => {
+                                console.log(data)
+                                let videos = data.items
+                                vidOneId = videos[0].id.videoId
+                                vidTwoId = videos[1].id.videoId
+                                vidThreeId = videos[2].id.videoId
+                                vidFourId = videos[3].id.videoId
+                                // console.log(vidId)
+                                videoPlayerOne.setAttribute('src', 'https://www.youtube.com/embed/' + vidOneId)
+                                videoPlayerTwo.setAttribute('src', 'https://www.youtube.com/embed/' + vidTwoId)
+                                videoPlayerThree.setAttribute('src', 'https://www.youtube.com/embed/' + vidThreeId)
+                                videoPlayerFour.setAttribute('src', 'https://www.youtube.com/embed/' + vidFourId)
+    
+                            })
+                    
+
+                })
 
 
 
 
 
+            }
 
-        }
+        })
+
+}
 
 
 
 button.addEventListener('click', nextPage)
+
+
