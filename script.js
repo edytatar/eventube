@@ -59,17 +59,23 @@ function nextPage(event) {
                 //Setting attributes for elements so they have the correct style
                 eventContainer.setAttribute("class", "event");
                 eventContainer.setAttribute("name", eventNameData);
+                eventContainer.setAttribute("style", "display: flex; flex-direction: column; align-items: center; text-align: start; margin-top: 2em; margin-bottom: 2em; font-size: smallest;");
                 imgContainer.setAttribute("class", "img-container");
                 eventDetailContainer.setAttribute("class", "details");
                 img.setAttribute("alt", "Image of performer");
                 img.setAttribute("src", imgData);
                 img.setAttribute("name", eventNameData);
+                img.setAttribute("style", "height: 25em; width: 30em; border: solid 1em red;");
                 eventName.setAttribute("class", "event-detail-component");
+                eventName.setAttribute("style", "margin: .5em;");
                 eventDate.setAttribute("class", "event-detail-component");
+                eventDate.setAttribute("style", "margin: .5em;");
                 eventLocation.setAttribute("class", "event-detail-component");
+                eventLocation.setAttribute("style", "margin: .5em;");
 
                 // Creating variable for article with class="event-article"
                 var eventSection = document.querySelector(".event-article");
+                eventSection.setAttribute('style', 'overflow: scroll;')
 
                 // Appending Elements
                 eventContainer.append(imgContainer);
@@ -83,11 +89,14 @@ function nextPage(event) {
                 //Appending all above to .event-article
                 eventSection.append(eventContainer);
 
+                console.log(eventContainer)
                 eventContainer.addEventListener('click', function(event) {
                         event.preventDefault()
+                        console.log(event.target.name)
                         var artist = event.target.name
 
-                        var requestUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=' + artist + '&key=AIzaSyDrE9r5RLbGomSlaxVmS5fZdzrrmGDV9dM'
+                        var apiKey = 'AIzaSyAUZgeQPKSMTSqIG2JdrIU1Qs33iIE02Zk'
+                        var requestUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=' + artist + '&key=' + apiKey
     
                         console.log(requestUrl)
     
