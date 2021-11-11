@@ -26,6 +26,7 @@ nav {
 h1 {
     background: linear-gradient(0deg, #96fbc4 0%, #f9f586 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-left: 1em;
     font-size: 3em;
@@ -43,6 +44,7 @@ h2 {
     font-weight: 700;
     background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     
 }
@@ -86,6 +88,7 @@ h3 {
     padding-bottom: .1em;
     background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     visibility: hidden;
 }
