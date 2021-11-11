@@ -7,6 +7,8 @@ var videoPlayerOne = document.querySelector('#frame-one')
 var videoPlayerTwo = document.querySelector('#frame-two')
 var videoPlayerThree = document.querySelector('#frame-three')
 var videoPlayerFour = document.querySelector('#frame-four')
+var locationBlock = document.querySelector('.location-article')
+
 
 
 function nextPage(event) {
@@ -74,7 +76,10 @@ function nextPage(event) {
                 img.setAttribute("alt", "Image of performer");
                 img.setAttribute("src", imgData);
                 img.setAttribute("name", ticketData._embedded.events[i].name);
+                // img.setAttribute("data-latitude", ticketData._embedded.events[i]._embedded.venues[0].location.latitude);
+                // img.setAttribute("data-longitude", ticketData._embedded.events[i]._embedded.venues[0].location.longitude);
                 img.setAttribute("class", "group-image");
+                console.log("Look here Pat!" + ticketData._embedded.events[i]._embedded.venues[0].location.longitude)
                 // img.setAttribute("style", "height: 25em; width: 30em; border: solid 1em rgb(84, 25, 124);");
                 eventName.setAttribute("class", "event-detail-component");
                 eventName.setAttribute("style", "font-size: large; font-weight: bolder; margin: .5em;");
@@ -113,6 +118,7 @@ function nextPage(event) {
                 // when the eventContainer is clicked, the name of the event will be added to the request url and run through youtube API
                 eventContainer.addEventListener('click', function(event) {
                         event.preventDefault()
+                        locationBlock.innerHTML = ""
                         console.log(event.target.name)
                         var artist = (event.target.name).trim()
 
@@ -141,24 +147,27 @@ function nextPage(event) {
     
                             })
                             
-                            var locationApi = 'pk.59690d63f01f6ca600e7fc0efd5800b6';
+                            var locationApi = 'pk.ef8832aad40eef5a3c9df28e9bdaae7a';
+                            var mapImage = document.createElement('img')
                             var latitude = ticketData._embedded.events[i]._embedded.venues[0].location.latitude;
                             var longitude = ticketData._embedded.events[i]._embedded.venues[0].location.longitude;
                             console.log(latitude)
                             console.log(longitude)
                             var locationUrl = 'https://maps.locationiq.com/v3/staticmap?key=' + locationApi + '&center=' + latitude + "," + longitude + '&zoom=16&size=400x600&format=png&maptype=roadmap&markers=icon:small-red-cutout|' + latitude + ',' + longitude
-                             
+                            mapImage.setAttribute('src', locationUrl)
+                            locationBlock.append(mapImage)
 
-                            fetch(locationUrl)
-                            .then(function (response) {
-                                return response.json();
-                            })
-                    
-                            .then(function (mapData) {
-                                console.log(mapData);
-                                
-                                
-                            })
+
+                            // fetch(locationUrl)
+                            // .then(function (response) {
+                            //     return response.json();
+        
+                            // })
+                            
+                            // .then(function (mapData) {
+                            //     console.log(mapData);
+                            // })
+                        
                     
 
                 })
