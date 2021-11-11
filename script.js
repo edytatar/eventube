@@ -117,16 +117,16 @@ function nextPage(event) {
                         var artist = (event.target.name).trim()
 
                         var apiKey = 'AIzaSyAUZgeQPKSMTSqIG2JdrIU1Qs33iIE02Zk'
-                        var requestUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=' + artist + '&key=' + apiKey
+                        var youtubeUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=' + artist + '&key=' + apiKey
     
-                        console.log(requestUrl)
+                        console.log(youtubeUrl)
     
-                        fetch(requestUrl)
+                        fetch(youtubeUrl)
                             .then((response) => {
                                 return response.json()
                             })
                             .then((data) => {
-                                console.log(data)
+                                // console.log(data)
                                 var videos = data.items
                                 // setting the data or 'video id' of the first four videos to a variable
                                 var vidOneId = videos[0].id.videoId
@@ -139,6 +139,25 @@ function nextPage(event) {
                                 videoPlayerThree.setAttribute('src', 'https://www.youtube.com/embed/' + vidThreeId)
                                 videoPlayerFour.setAttribute('src', 'https://www.youtube.com/embed/' + vidFourId)
     
+                            })
+                            
+                            var locationApi = 'pk.59690d63f01f6ca600e7fc0efd5800b6';
+                            var latitude = ticketData._embedded.events[i]._embedded.venues[0].location.latitude;
+                            var longitude = ticketData._embedded.events[i]._embedded.venues[0].location.longitude;
+                            console.log(latitude)
+                            console.log(longitude)
+                            var locationUrl = 'https://maps.locationiq.com/v3/staticmap?key=' + locationApi + '&center=' + latitude + "," + longitude + '&zoom=16&size=400x600&format=png&maptype=roadmap&markers=icon:small-red-cutout|' + latitude + ',' + longitude
+                             
+
+                            fetch(locationUrl)
+                            .then(function (response) {
+                                return response.json();
+                            })
+                    
+                            .then(function (mapData) {
+                                console.log(mapData);
+                                
+                                
                             })
                     
 
