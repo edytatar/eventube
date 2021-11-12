@@ -8,10 +8,33 @@ var videoPlayerTwo = document.querySelector('#frame-two')
 var videoPlayerThree = document.querySelector('#frame-three')
 var videoPlayerFour = document.querySelector('#frame-four')
 var locationBlock = document.querySelector('.location-article')
+var title = document.querySelector('.eventube')
+var listPage = document.querySelector('.list-page')
+var listBtn = document.querySelector('.list-button')
+var listEl = document.querySelector('.artist-list')
+var savedEventsArray = []
+
+
+if (JSON.parse(localStorage.getItem('artists')) !== null) {
+    savedEventsArray = JSON.parse(localStorage.getItem('artists'));
+} else {
+    localStorage.setItem('artists', JSON.stringify(savedEventsArray))
+}
+
+function populateArtists() {
+for (var i = 0; i <= savedEventsArray.length; i++) {
+    var artistEl = document.createElement('li');
+    artistEl.setAttribute('style', ('font-size: large; margin: 1em;'))
+    artistEl.textContent = savedEventsArray[i];
+    console.log(artistEl)
+    listEl.appendChild(artistEl);
+}
+}
+
 function nextPage() {
     // Hiding "home page" and displaying "second page"
-    mainPage.setAttribute('style', 'display: none;')
-    secondPage.setAttribute('style', 'display: unset;')
+    mainPage.setAttribute('style', 'display: none;');
+    secondPage.setAttribute('style', 'display: unset;');
     // Creating variables for ticketmaster API
     var cityName = inputField.value;
     var ticketApiKey = 'cJ7Du9o4a3aUD0VZZwh7fqoTrs6wLvzQ';
@@ -100,6 +123,15 @@ function nextPage() {
                     var latitude = (event.target.dataset.latitude)
                     var longitude = (event.target.dataset.longitude)
                     var artist = (event.target.name).trim()
+
+                    // saving clicked artists to local storage
+                    savedEventsArray = savedEventsArray.concat(artist)
+                    localStorage.setItem('artists', JSON.stringify(savedEventsArray))
+
+                    // savedEventsArray = JSON.parse(localStorage.getItem('artists'));
+
+
+
                     var apiKey = 'AIzaSyDrE9r5RLbGomSlaxVmS5fZdzrrmGDV9dM'
                     var youtubeUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=' + artist + '&key=' + apiKey
                     console.log(youtubeUrl)
@@ -158,9 +190,24 @@ function nextPage() {
             })
         })
 }
+
+function showHome() {
+    mainPage.setAttribute('style', 'display: unset;');
+    secondPage.setAttribute('style', 'display: none;');
+    listPage.setAttribute('style', 'display: none;');
+}
+
+function seeList() {
+    mainPage.setAttribute('style', 'display: none;');
+    secondPage.setAttribute('style', 'display: none;');
+    listPage.setAttribute('style', 'display: unset;')
+    listEl.textContent = ""
+    populateArtists()
+}
+
 button.addEventListener('click', function (event) {
     event.preventDefault()
-    cityInput = inputField.value.trim()
+    cityInput = inputField.value.trim();
     // checks the input, if it is blank, the modal will apear
     if (!cityInput) {
         var emptyModal = document.querySelector("#modal-empty");
@@ -180,4 +227,10 @@ button.addEventListener('click', function (event) {
     else {
         nextPage()
     }
+    inputField.value = "";
+
 })
+
+title.addEventListener('click', showHome)
+
+listBtn.addEventListener('click', seeList)

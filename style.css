@@ -14,7 +14,28 @@ body {
     /* align-items: center; */
 }
 nav {
+    background-color: #99430ada;
     margin-bottom: 2em;
+    position: fixed;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+}
+nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.list-button {
+    width:8em;
+    height: 2.5em;
+    background: unset;
+    background-color: #4CC2C3;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    margin-right: 2em;
+    position: fixed;
 }
 .modal {
     display: none; /* Hidden by default */
@@ -78,8 +99,15 @@ h1 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-left: 1em;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 900;
+}
+.eventube:hover {
+    background: linear-gradient(0deg, #579774 0%, #918e4d 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
 }
 main {
     display: flex;
@@ -99,6 +127,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 25%;
 }
 form {
     display: flex;
@@ -124,6 +153,7 @@ button {
     border-radius: 0.5em;
     box-shadow: black .25em .25em .25em;
 }
+
 h3 {
     font-size: 2em;
     font-weight: 700;
@@ -151,6 +181,7 @@ figure {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 20%;
     width: 100%;
 }
 
@@ -279,6 +310,21 @@ iframe:hover {
     transform: scale(1.05);
 }
 
+.list-page {
+    display: none;
+
+}
+h6 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 15%;
+    font-size: large;
+}
+.artist-list {
+    text-align: center;
+}
+
 @media (min-width: 48em) {
     main {
         margin-top: 8%;
@@ -286,6 +332,14 @@ iframe:hover {
     button {
         height: 2.25em;
         font-size: 2.25em;
+    }
+    nav {
+        height:15%;
+    }
+    .list-button {
+    width: 8em;
+    height: 2.5em;
+    font-size: 2em;
     }
     h1 {
         font-size: 3em;
@@ -298,6 +352,12 @@ iframe:hover {
     }
     h4 {
         font-size: 4em;
+    }
+    .search {
+        margin-top: 15%;
+    }
+    .block-holder {
+        margin-top: 15%;
     }
     .event-article {
         width: 100%;
@@ -316,6 +376,9 @@ iframe:hover {
         height: 2.5em;
         font-size: 2.5em;
     }
+    nav {
+        height:18%;
+    }
     h1 {
         font-size: 4em;
     }
@@ -327,6 +390,12 @@ iframe:hover {
     }
     h4 {
         font-size: 4em;
+    }
+    .search {
+        margin-top: 10%;
+    }
+    .block-holder {
+        margin-top: 15%;
     }
     .event-article {
     width: 100%;
