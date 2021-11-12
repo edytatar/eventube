@@ -12,6 +12,7 @@ var title = document.querySelector('.eventube')
 var listPage = document.querySelector('.list-page')
 var listBtn = document.querySelector('.list-button')
 var listEl = document.querySelector('.artist-list')
+var clearBtn = document.querySelector('.clear-button')
 var savedEventsArray = []
 
 
@@ -205,6 +206,15 @@ function seeList() {
     populateArtists()
 }
 
+function clearArtists() {
+    listEl.textContent = ""
+    localStorage.clear()
+}
+
+
+
+
+
 button.addEventListener('click', function (event) {
     event.preventDefault()
     cityInput = inputField.value.trim();
@@ -228,9 +238,10 @@ button.addEventListener('click', function (event) {
         nextPage()
     }
     inputField.value = "";
-
 })
 
 title.addEventListener('click', showHome)
 
 listBtn.addEventListener('click', seeList)
+
+clearBtn.addEventListener('click', clearArtists)
