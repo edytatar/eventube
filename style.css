@@ -312,7 +312,18 @@ iframe:hover {
 
 .list-page {
     display: none;
-
+}
+.list-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.clear-button {
+    font-size: 2em;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(#a86602da, #d0d30cda, #a86602da);
 }
 h6 {
     display: flex;
@@ -352,6 +363,14 @@ h6 {
     }
     h4 {
         font-size: 4em;
+    }
+    .clear-button {
+        font-size: 2.5em;
+        width: 6em;
+        justify-content: center;
+        padding-left: 4em;
+        padding-right: 4em;
+        letter-spacing: .25em;
     }
     .search {
         margin-top: 15%;
