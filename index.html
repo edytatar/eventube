@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +11,6 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <nav>
         <h1 class="pure-u-1">
@@ -25,7 +23,7 @@
                 Got any plans?
             </h2>
             <form class="pure-form">
-                <input class="pure-input" type='text' placeholder=" Please enter your city">
+                <input class="pure-input" type='text' placeholder=" Please enter your city" required="">
                 <button class='city-search'>Search</button>
             </form>
             <h3>
@@ -35,26 +33,37 @@
         <figure>
             <img src="./images/guitar2.gif" alt="">
         </figure>
+        <div id="modal-empty" class="modal">
+            <div class="modal-content">
+              <span class="close-empty">&times;</span>
+              <p>
+                  You did not submit anything!<br><br>Please type in a city!
+              </p>
+              <img class='nothing' src='https://media.giphy.com/media/26ufnwz3wDUli7GU0/giphy.gif' alt='Patrick Star checking off nothing'>
+            </div>
+        </div>
     </main>
-
     <section class='search-result'>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>
+                  Whoops! There is something wrong with the information you submitted...<br><br>You will now be returned to the home page.
+              </p>
+              <img class='oops-lady' src='https://media3.giphy.com/media/dsWOUTBz5aae8ET8Ss/giphy.gif?cid=ecf05e47l4msaldc75ofozdky9wtd0crs5d3vq54fj8wkv6b&rid=giphy.gif&ct=g' alt="404 Error Lady">
+            </div>
+        </div>
         <section class='pure-g block-holder'>
-
             <section class='pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 event-block'>
                 <h4>Events in Your Area</h4>
                 <article class='event-article'>
-
                 </article>
             </section>
-
             <section class='pure-u-1 pure-u-md-1-2 pure-u-lg-1-3 location-block'>
                 <h4>MAP YOUR ROUTE</h4>
                 <article class='location-article'>
-
-
                 </article>
             </section>
-
             <section class='pure-u-1 pure-u-md-1 pure-u-lg-1-3 video-block'>
                 <h4>CHECK IT OUT</h4>
                 <section class='videos'>
@@ -76,13 +85,8 @@
                         allowfullscreen></iframe>>
                 </section>
             </section>
-
         </section>
     </section>
-
-
-
     <script src='script.js'></script>
 </body>
-
 </html>
