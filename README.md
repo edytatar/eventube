@@ -44,3 +44,30 @@ Voila! Now you have something to do with your day off in the selected city!
 ## Future Developments
 
 We want the user to be able to search by address and zip code in future production. We want to be able to filter events by distance from location input. In the future we would like to be able to search events of specific music genres. We also want to sort and organize stored events by location and date.
+
+## Credits
+We had a TON of fun with creating this app! The credit goes out to the wonderful project members: Edyta Tarczynski, Sam Page, & Evan Bulliner! Without these group of people, none of this would be possible! We would also like to thank our TA's Jen, and Pat! We would like to thank our excellent instructor Lori! We did a lot of research on Ticketmaster, YouTube, and LocationIQ's API. We literally couldn't be happier with this group! Even in our times of despair, we smiled through the pain!  
+
+
+## Questions
+For more information on this project and other projects, here is a link to our individual GitHub page:
+
+Edyta Tarczynski's GitHub:
+https://github.com/edytatar
+
+Sam Page's GitHub:
+https://github.com/xGrizabellax
+ 
+Evan Bulliner's GitHub:
+https://github.com/ebulliner
+
+
+
+
+Please reach out via email for any further questions:
+
+edytatar@gmail.com
+
+sampage6@gmail.com
+
+evan_bulliner@yahoo.com
