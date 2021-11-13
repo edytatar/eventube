@@ -66,19 +66,20 @@ function nextPage() {
                 var eventNameData = document.createElement('span');
                 var eventDateData = document.createElement('span');
                 var eventLocationData = document.createElement('span');
+
                 // Storing data for elements in variables
                 var imgData = ticketData._embedded.events[i].images[0].url;
                 eventNameData.textContent = ticketData._embedded.events[i].name;
                 eventDateData.textContent = ticketData._embedded.events[i].dates.start.localDate;
                 eventLocationData.textContent = ticketData._embedded.events[i]._embedded.venues[0].name;
+
                 // Adding data to elements
-                // eventName.textContent = "Name: " + eventNameData;
                 eventName.textContent = "Name: ";
                 eventDate.textContent = "Date: ";
                 eventLocation.textContent = "Location: ";
+
                 //Setting attributes for elements so they have the correct style
                 eventContainer.setAttribute("class", "event");
-                eventContainer.setAttribute("style", "display: flex; flex-direction: column; align-items: center; text-align: start; margin-top: 1em; margin-bottom: 10em; font-size: smallest;");
                 eventContainer.setAttribute("name", ticketData._embedded.events[i].name);
                 imgContainer.setAttribute("class", "img-container");
                 eventDetailContainer.setAttribute("class", "details");
@@ -88,24 +89,22 @@ function nextPage() {
                 img.setAttribute("data-latitude", ticketData._embedded.events[i]._embedded.venues[0].location.latitude);
                 img.setAttribute("data-longitude", ticketData._embedded.events[i]._embedded.venues[0].location.longitude);
                 img.setAttribute("class", "group-image");
-                // img.setAttribute("style", "height: 25em; width: 30em; border: solid 1em rgb(84, 25, 124);");
                 eventName.setAttribute("class", "event-detail-component");
-                eventName.setAttribute("style", "font-size: large; font-weight: bolder; margin: .5em;");
                 eventDate.setAttribute("class", "event-detail-component");
-                eventDate.setAttribute("style", "font-size: large; font-weight: bolder; margin: .5em;");
                 eventLocation.setAttribute("class", "event-detail-component");
-                eventLocation.setAttribute("style", "font-size: large; font-weight: bolder; margin: .5em;");
-                // setting the style difference between the input data and the input category
-                eventNameData.setAttribute("style", "line-height: 1.5em; text-decoration: underline; font-weight: 500; color: rgb(4, 4, 170)");
-                eventDateData.setAttribute("style", "line-height: 1.5em; font-weight: 500; color: rgb(4, 4, 170)");
-                eventLocationData.setAttribute("style", "line-height: 1.5em; font-weight: 500; color: rgb(4, 4, 170)");
+
+                // Setting attributes for elements containing dataso they have the correct style
+                eventNameData.setAttribute("class", "event-data-component");
+                eventDateData.setAttribute("class", "event-data-component");
+                eventLocationData.setAttribute("class", "event-data-component");
+
                 // Creating variable for article with class="event-article"
                 var eventSection = document.querySelector(".event-article");
-                // eventSection.setAttribute('style', 'overflow: scroll;')
+
                 // Appending Elements
                 eventContainer.append(imgContainer);
                 imgContainer.append(img);
-                // appending the input data to the input category
+                // Appending the input data to the input category
                 eventName.append(eventNameData);
                 eventDate.append(eventDateData);
                 eventLocation.append(eventLocationData);
@@ -113,10 +112,12 @@ function nextPage() {
                 eventDetailContainer.append(eventName);
                 eventDetailContainer.append(eventDate);
                 eventDetailContainer.append(eventLocation);
-                //Appending all above to .event-article
+
+                // Appending all above to .event-article
                 eventSection.append(eventContainer);
                 console.log(eventContainer)
-                // when the eventContainer is clicked, the name of the event will be added to the request url and run through youtube API
+
+                // When the eventContainer is clicked, the name of the event will be added to the request url and run through youtube API
                 eventContainer.addEventListener('click', function (event) {
                     event.preventDefault()
                     locationBlock.innerHTML = ""
@@ -125,7 +126,7 @@ function nextPage() {
                     var longitude = (event.target.dataset.longitude)
                     var artist = (event.target.name).trim()
 
-                    // saving clicked artists to local storage
+                    // Saving clicked artists to local storage
                     savedEventsArray = savedEventsArray.concat(artist)
                     localStorage.setItem('artists', JSON.stringify(savedEventsArray))
 
