@@ -21,3 +21,26 @@ This will take you to VS Code and you will be in the repository on your local ma
 
 To access directly from the live GitHub Link: https://project-1-see.github.io/eventube/ 
 
+## Usage 
+The user navigates to the site via: https://project-1-see.github.io/eventube/   
+
+They are presented with the homepage where you type in a city.:
+![Homepage]()
+
+Once the user types in a city 5 events will pop up.: 
+![Events]()
+
+Once an event is clicked, the user will then see the location of the venue and 4 YouTube videos of the selected artist/event.: 
+![YouTube&MapImage]()
+
+If no location is entered, you will be met with a message that says "You did not submit anything!", and will be returned to the homepage."
+![ErrorMessage]()
+
+If a location that isn't valid is entered, then you will be met with a 404 message and will be returned to the homepage.:
+![ErrorMessage]()
+
+Voila! Now you have something to do with your day off in the selected city!
+
+## Future Developments
+
+We want the user to be able to search by address and zip code in future production. We want to be able to filter events by distance from location input. In the future we would like to be able to search events of specific music genres. We also want to sort and organize stored events by location and date.
