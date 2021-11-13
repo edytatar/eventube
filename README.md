@@ -22,24 +22,28 @@ This will take you to VS Code and you will be in the repository on your local ma
 To access directly from the live GitHub Link: https://project-1-see.github.io/eventube/ 
 
 ## Usage 
-The user navigates to the site via: https://project-1-see.github.io/eventube/   
+The user navigates to the site via: https://project-1-see.github.io/eventube/ 
 
 They are presented with the homepage where you type in a city.:
-![Homepage]()
+![Homepage](https://user-images.githubusercontent.com/88168570/141604203-ea6b652e-d79b-45a7-8c2d-ffcdb1f68587.png)
 
 Once the user types in a city 5 events will pop up.: 
-![Events]()
+![Events](https://user-images.githubusercontent.com/88168570/141604216-9ad2bc1e-00b7-49ab-bf50-f75e9cafe395.png)
 
 Once an event is clicked, the user will then see the location of the venue and 4 YouTube videos of the selected artist/event.: 
-![YouTube&MapImage]()
+![YouTube&MapImage](https://user-images.githubusercontent.com/88168570/141604221-88d0eb24-6b52-4465-b3b8-620ebc851d48.png)
 
 If no location is entered, you will be met with a message that says "You did not submit anything!", and will be returned to the homepage."
-![ErrorMessage]()
+![ErrorMessage](https://user-images.githubusercontent.com/88168570/141604228-819eda9e-0a4c-4ba0-8e5e-bb50204c08d9.png)
 
 If a location that isn't valid is entered, then you will be met with a 404 message and will be returned to the homepage.:
-![ErrorMessage]()
+![ErrorMessage](https://user-images.githubusercontent.com/88168570/141604230-559ca0c3-21ce-481e-940b-d268c6120c13.png)
 
 Voila! Now you have something to do with your day off in the selected city!
+
+Wireframe Images:
+![WireFrameImage](https://user-images.githubusercontent.com/88168570/141604234-a509b766-8701-4d1e-9d02-65380bec48bc.png)
+![WireFrameImage](https://user-images.githubusercontent.com/88168570/141604238-f6e1fb65-6b4e-4379-a1eb-65c518a2c0e2.png)
 
 ## Future Developments
 
