@@ -13,30 +13,57 @@ body {
     flex-direction: column;
     /* align-items: center; */
 }
+
 nav {
-    background-color: #99430ada;
     margin-bottom: 2em;
     position: fixed;
     width: 100%;
     height: 10%;
     display: flex;
     flex-direction: row;
-}
-nav {
-    display: flex;
     justify-content: end;
     align-items: center;
+    margin-bottom: 1em;
 }
+
+h1 {
+    background: linear-gradient(0deg, #96FBC4 0%, #F9F586 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 1em;
+    font-size: 2.5em;
+    font-weight: 900;
+}
+
+.eventube:hover {
+    opacity: 85%;
+}
+
 .list-button {
-    width:8em;
-    height: 2.5em;
-    background: unset;
-    background-color: #4CC2C3;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1em;
-    margin-right: 2em;
-    position: fixed;
+    width: 8em;
+    height: 3em;
+    background: linear-gradient(0deg, #96FBC4 0%, #F9F586 100%);
+    font-size: 1.25em;
+    color: black;
+    border: none;
+    margin-right: 4em;
+    box-shadow:
+     1px 1px 1.9px rgba(0, 0, 0, 0.014),
+    2.6px 2.9px 5.1px rgba(0, 0, 0, 0.02),
+     6.3px 6.9px 12.4px rgba(0, 0, 0, 0.026),
+    21px 23px 41px rgba(0, 0, 0, 0.04);
 }
+
+.list-button:hover {
+    transition: transform 300ms;
+    transform: scale(1.05);
+}
+
+.list-button:active {
+    opacity: 85%;
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -87,33 +114,21 @@ nav {
     border: solid .1em yellow;
     border-radius: 2em;
 }
+
 .nothing {
     margin-top: 1em;
     width: 40%;
     border: solid .1em yellow;
     border-radius: 2em;
 }
-h1 {
-    background: linear-gradient(0deg, #96FBC4 0%, #F9F586 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-left: 1em;
-    font-size: 2em;
-    font-weight: 900;
-}
-.eventube:hover {
-    background: linear-gradient(0deg, #579774 0%, #918e4d 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    cursor: pointer;
-}
+
+
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 h2 {
     font-size: 4em;
     font-weight: 700;
@@ -122,6 +137,7 @@ h2 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .search {
     display: flex;
     flex-direction: column;
@@ -129,6 +145,7 @@ h2 {
     align-items: center;
     margin-top: 25%;
 }
+
 form {
     display: flex;
     flex-direction: column;
@@ -136,6 +153,7 @@ form {
     margin-top: 3em;
     margin-bottom: 2em;
 }
+
 input {
     font-size: 2em;
     height: 2em;
@@ -143,6 +161,7 @@ input {
     background-color: white;
     border: none;
 }
+
 button {
     height: 2em;
     font-size: 2em;
@@ -151,7 +170,11 @@ button {
     margin-top: 5%;
     margin-bottom: 5%;
     border-radius: 0.5em;
-    box-shadow: black .25em .25em .25em;
+    box-shadow:
+     1px 1px 1.9px rgba(0, 0, 0, 0.014),
+    2.6px 2.9px 5.1px rgba(0, 0, 0, 0.02),
+     6.3px 6.9px 12.4px rgba(0, 0, 0, 0.026),
+    21px 23px 41px rgba(0, 0, 0, 0.04);
 }
 
 h3 {
@@ -164,19 +187,22 @@ h3 {
     -webkit-text-fill-color: transparent;
     visibility: hidden;
 }
+
 main:hover h3 {
     visibility: visible;
 }
 .search-result {
     display: none;
 }
+
 figure {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    margin-left: 10%;
+    margin-left: 1em;
 }
+
 .block-holder {
     display: flex;
     flex-wrap: wrap;
@@ -186,7 +212,7 @@ figure {
 }
 
 h5 {
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: 400;
     display: flex;
     text-align: center;
@@ -201,6 +227,16 @@ h4 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.event {
+    display: flex; 
+    flex-direction: column; 
+    text-align: start; 
+    margin-top: 1em; 
+    margin-bottom: 10em; 
+    font-size: 1em;
+}
+
 .event-block {
     text-align: center;
     display: flex;
@@ -210,8 +246,9 @@ h4 {
     padding: 2em;
 }
 
+
 .event-article {
-    width: 90%;
+    width: 35em;
     height: 40em;
     margin-top: 2em;
     background-color: rgba(255, 255, 255, 0.5);
@@ -224,6 +261,7 @@ h4 {
 }
 
 .group-image {
+    display:flex;
     height: 25em;
     width: 30em;
     border: solid .1em white;
@@ -245,15 +283,24 @@ h4 {
     border: solid 1.5em rgb(59, 25, 82);
 }
 
-.event {
-    display: flex;
-    flex-direction: column;
-}
 
 .details {
     display: flex;
     flex-direction: column;
     list-style-type: none;
+}
+
+.event-detail-component {
+    font-size: 2em; 
+    font-weight: 900; 
+    margin: .5em;
+}
+
+.event-data-component {
+    line-height: 1em;
+    font-size: 1em;
+    font-weight: 400; 
+    color: rgb(4, 4, 170);
 }
 
 li {
@@ -283,7 +330,7 @@ li {
 }
 
 .videos {
-    margin-top: 4em;
+    margin-top: .25em;
 }
 
 .video-block {
@@ -313,25 +360,48 @@ iframe:hover {
 .list-page {
     display: none;
 }
+
 .list-page-content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.clear-button {
-    font-size: 2em;
-    padding: 1em;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(#a86602da, #d0d30cda, #a86602da);
-}
+
+
 h6 {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 15%;
-    font-size: large;
+    margin-top: 3.5em;
+    font-size: 2em;
 }
+
+.clear-button {
+    font-size: 2em;
+    padding: 1em;
+    height: 1em;
+    display: flex;
+    align-items: center;
+    color: black;
+    border: none;
+    box-shadow:
+    1.7px 1.7px 1.9px rgba(0, 0, 0, 0.014),
+    4.8px 4.8px 5.1px rgba(0, 0, 0, 0.02),
+    11.5px 11.5px 12.4px rgba(0, 0, 0, 0.026),
+    38px 38px 41px rgba(0, 0, 0, 0.04)
+  ;
+    background: linear-gradient(0deg, #96FBC4 0%, #F9F586 100%);
+}
+
+.clear-button:hover {
+    transition: transform 300ms;
+    transform: scale(1.05);
+}
+
+.clear-button:active {
+    opacity: 85%;
+}
+
 .artist-list {
     text-align: center;
 }
@@ -391,15 +461,28 @@ h6 {
     main {
         margin-top: 5%;
     }
+    
     button {
         height: 2.5em;
         font-size: 2.5em;
     }
-    nav {
-        height:18%;
+    .guitar {
+        width: 100em;
+        margin-left: 8em;
     }
     h1 {
-        font-size: 4em;
+        font-size: 5em;
+    }
+    h5 {
+        font-size: 3.5em;
+        margin-bottom: 1em;
+    }
+    h6 {
+        margin-top: 6em;
+        font-size: 3em;
+    }
+    .artist-list {
+        font-size: 3em;
     }
     h2 {
         font-size: 10em;
@@ -414,7 +497,7 @@ h6 {
         margin-top: 10%;
     }
     .block-holder {
-        margin-top: 15%;
+        margin-top: 17em;
     }
     .event-article {
     width: 100%;
@@ -423,4 +506,18 @@ h6 {
         width: 30rem;
         height: 16em;
     }
+}
+
+@media (min-width: 100em) {
+    .list-button {
+        font-size: 2.5em;
+    }
+    .guitar {
+        margin-left: 80em;
+        align-self: center;
+    }
+    .event-article {
+        width: 45em;
+    }
+
 }
