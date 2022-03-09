@@ -6,12 +6,12 @@
     font-family: 'Poppins', sans-serif;
 }
 body {
-    background-color: #4CC2C3;
+    background-color: #081842;
     background-size: 100%;
     background-position-y: 60%;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    
 }
 
 nav {
@@ -27,7 +27,7 @@ nav {
 }
 
 h1 {
-    background: linear-gradient(0deg, #96FBC4 0%, #F9F586 100%);
+    background: linear-gradient(0deg, #ff758c 0%, #ff7eb3 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -43,7 +43,7 @@ h1 {
 .list-button {
     width: 8em;
     height: 3em;
-    background: linear-gradient(0deg, #96FBC4 0%, #F9F586 100%);
+    background: linear-gradient(0deg, #ff758c 0%, #ff7eb3 100%);
     font-size: 1.25em;
     color: black;
     border: none;
@@ -165,8 +165,8 @@ input {
 button {
     height: 2em;
     font-size: 2em;
-    background: linear-gradient(0.25turn, rgb(78, 35, 179), rgb(160, 31, 160), rgb(78, 35, 179));
-    color: white;
+    background: linear-gradient(0deg, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);
+    color: black;
     margin-top: 5%;
     margin-bottom: 5%;
     border-radius: 0.5em;
@@ -217,6 +217,7 @@ h5 {
     display: flex;
     text-align: center;
     margin-bottom: 1em;
+    color: white;
 }
 
 h4 {
@@ -304,10 +305,7 @@ h4 {
 }
 
 li {
-    background: linear-gradient(0deg, #6A11CB 0%, #2575FC 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+   color: white;
     margin-left: 1em;
 }
 
@@ -374,6 +372,7 @@ h6 {
     text-align: center;
     margin-top: 3.5em;
     font-size: 2em;
+    color: white;
 }
 
 .clear-button {
@@ -390,7 +389,7 @@ h6 {
     11.5px 11.5px 12.4px rgba(0, 0, 0, 0.026),
     38px 38px 41px rgba(0, 0, 0, 0.04)
   ;
-    background: linear-gradient(0deg, #96FBC4 0%, #F9F586 100%);
+    background: linear-gradient(0deg, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);
 }
 
 .clear-button:hover {
@@ -468,7 +467,7 @@ h6 {
     }
     .guitar {
         width: 100em;
-        margin-left: 8em;
+        margin: 0 auto;
     }
     h1 {
         font-size: 5em;
@@ -513,8 +512,7 @@ h6 {
         font-size: 2.5em;
     }
     .guitar {
-        margin-left: 15em;
-        align-self: center;
+        margin: 0 auto;
     }
     .event-article {
         width: 45em;
